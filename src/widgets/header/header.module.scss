@@ -1,0 +1,37 @@
+@import '../../app/styles/variables';
+
+.header {
+    background: url('../../shared/assets/img/about/Main.jpg') center (center/cover) no-repeat;
+    height: 640px;
+    padding: 20px 0;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 0px;
+        align-items: center;
+
+        a {
+            color: $light;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $btn-main;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba($btn-shadow, 0.25);
+            }
+        }
+    }
+}
+
+.title {
+    color: $light;
+    font-size: 26px;
+    margin: 41px 0px 41px 0;
+    text-align: center;
+}

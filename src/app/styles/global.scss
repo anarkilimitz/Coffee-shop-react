@@ -1,0 +1,44 @@
+// Импорт всех базовых стилей
+@import './variables.scss';
+@import './mixins';
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0;
+
+    @media (max-width: 1460px) {
+        max-width: 1200px;
+    }
+
+    @media (max-width: 1220px) {
+        max-width: 992px;
+    }
+
+    @media (max-width: 1020px) {
+        max-width: 768px;
+    }
+
+    @media (max-width: 790px) {
+        max-width: 576px;
+    }
+
+    @media (max-width: 600px) {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}

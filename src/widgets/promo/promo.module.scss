@@ -1,0 +1,21 @@
+@import '../../app/styles/variables';
+
+.container {
+    background: url('../../shared/assets/img/about/Main-bg-mask.jpg') center (center/cover) no-repeat;
+    height: 495px;
+    margin-bottom: 120px;
+}
+
+h2 {
+    color: $dark;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.title {
+    color: $dark;
+    font-weight: 400;
+    font-size: 26px;
+    padding: 41px 0px 41px 0;
+    text-align: center;
+}
