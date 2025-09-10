@@ -5,7 +5,7 @@ const Promo = () => {
 	return (
 		<section className={styles.promo}>
 			<div className={styles.container}>
-				<h2 className={styles.title}>Our best</h2>
+				<h2 className={styles.title_promo}>Our best</h2>
 			</div>
 		</section>
 	);

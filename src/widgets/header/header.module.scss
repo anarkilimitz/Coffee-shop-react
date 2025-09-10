@@ -29,9 +29,23 @@
     }
 }
 
-.title {
+h2,
+h3 {
     color: $light;
-    font-size: 26px;
-    margin: 41px 0px 41px 0;
+    font-size: 24px;
+    font-weight: 400;
+    // margin: 100px 0px 41px 0;
     text-align: center;
+}
+
+.title_header h2 {
+    color: $light;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 110px 0px 41px 0;
+    text-align: center;
+}
+
+.title_mg {
+    margin-top: 80px;
 }

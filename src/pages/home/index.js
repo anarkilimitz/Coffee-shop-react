@@ -7,7 +7,7 @@ const Home = () => {
 	return (
 		<div className={styles.home}>
 			<div className={styles.container}>
-				<h2 className={styles.title}>About Us</h2>
+				<h2 className={styles.title_home}>About Us</h2>
 				<DecoratedTitle />
 				<p className={styles.paragraph}>
 					Extremity sweetness difficult behaviour he of. On disposal of as
@@ -25,7 +25,7 @@ const Home = () => {
 					hope. Secure active living depend son repair day ladies now.
 				</p>
 			</div>
-			<Promo/>
+			<Promo />
 		</div>
 	);
 };
