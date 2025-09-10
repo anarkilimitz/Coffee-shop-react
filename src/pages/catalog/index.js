@@ -32,7 +32,7 @@ const Catalog = () => {
 	// Компонент карточки
 	const MenuCard = ({ src, alt, title, descr, price }) => {
 		const transfer = 92;
-		const priceInUAH = price * transfer;
+		const priceInUSD = price * transfer;
 
 		return (
 			<div className={styles.menu__item}>
@@ -43,7 +43,7 @@ const Catalog = () => {
 				<div className={styles.menu__item_price}>
 					<div className={styles.menu__item_cost}>Цена:</div>
 					<div className={styles.menu__item_total}>
-						<span>{priceInUAH}</span> руб / 1кг
+						<span>{priceInUSD}</span> руб / 500г
 					</div>
 				</div>
 			</div>
