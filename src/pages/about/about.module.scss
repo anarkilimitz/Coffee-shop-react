@@ -45,3 +45,11 @@
         letter-spacing: 0.6px;
     }
 }
+
+.line {
+    margin: 60px auto;
+    width: 300px;
+    height: 1px;
+    background-color: $dark;
+    display: block;
+}

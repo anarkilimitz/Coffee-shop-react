@@ -35,6 +35,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
+			<span className={styles.line}></span>
 		</div>
 	);
 };
