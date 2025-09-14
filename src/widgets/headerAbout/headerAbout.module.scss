@@ -1,16 +1,15 @@
 @import '../../app/styles/variables';
 
-.footer {
-    background: $grad;
-    height: 150px;
-    padding: 20px 0;
+.header_about {
+    background: url('../../shared/assets/img/our/main-bs-our.jpg') center (center/cover) no-repeat;
+    height: 260px;
+    padding: 20px 0 0 0;
 
     nav {
         display: flex;
         justify-content: center;
         gap: 0px;
         align-items: center;
-        margin: 20px 0 50px 0;
 
         a {
             color: $light;
@@ -28,4 +27,12 @@
             }
         }
     }
+}
+
+.title_header_about h2 {
+    margin-top: 60px;
+    color: $light;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
 }

@@ -1,0 +1,47 @@
+@import '../../app/styles/variables';
+
+// src/pages/about/about.module.scss
+.about {
+    width: 700px;
+    margin: 70px auto 0;
+    padding: 0;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 80px;
+    }
+
+    &__photo {
+        display: block;
+        width: 272px;
+        height: 359px;
+        object-fit: cover;
+        max-width: 100%;
+        object-position: center;
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+        padding: 0 auto;
+        color: $dark;
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__mg_text {
+        margin-top: 25px;
+    }
+
+    p {
+        font-size: 14px;
+        color: $dark;
+        line-height: 1.7;
+        text-align: center;
+        hyphens: manual;
+        word-spacing: -0.5px;
+        letter-spacing: 0.6px;
+    }
+}

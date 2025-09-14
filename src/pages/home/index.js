@@ -9,7 +9,7 @@ const Home = () => {
 			<div className={styles.container}>
 				<h2 className={styles.title_home}>About Us</h2>
 				<DecoratedTitle />
-				<p className={styles.paragraph}>
+				<p className={styles.paragraph_first}>
 					Extremity sweetness difficult behaviour he of. On disposal of as
 					landlord horrible. Afraid at highly months do things on at. Situation
 					recommend objection do intention so questions. As greatly removed
@@ -17,7 +17,7 @@ const Home = () => {
 					Children me laughing we prospect answered followed. At it went is song
 					that held help face.
 				</p>
-				<p className={styles.paragraph}>
+				<p className={styles.paragraph_second}>
 					Now residence dashwoods she excellent you. Shade being under his bed
 					her, Much read on as draw. Blessing for ignorant exercise any yourself
 					unpacked. Pleasant horrible but confined day end marriage. Eagerness

@@ -2,7 +2,7 @@ import React from 'react';
 import { ReactComponent as CoffeeBeansIcon } from '../../assets/icons/logo-coffee/logo-coffee-black.svg';
 import styles from './decoratedTitle.module.scss';
 
-const decoratedTitle = () => {
+const DecoratedTitle = () => {
 	return (
 		<div className={styles.decoratedTitle}>
 			<div className={styles.line}></div>
@@ -12,4 +12,4 @@ const decoratedTitle = () => {
 	);
 };
 
-export default decoratedTitle;
+export default DecoratedTitle;

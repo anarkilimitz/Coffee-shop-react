@@ -12,8 +12,16 @@ p {
     font-weight: 400;
 }
 
-.paragraph {
-    margin-bottom: 16px;
+.paragraph_first {
+    margin: 41px 0 20px 0;
+    line-height: 1.9;
+    text-align: center;
+    hyphens: manual;
+    word-spacing: -0.5px;
+    letter-spacing: 0.6px;
+}
+
+.paragraph_second {
     line-height: 1.9;
     text-align: center;
     hyphens: manual;
