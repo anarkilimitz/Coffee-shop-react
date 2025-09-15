@@ -17,7 +17,7 @@ import Footer from '../widgets/footer';
 import Home from '../pages/home';
 import Catalog from '../pages/catalog';
 import About from '../pages/about/about';
-import Goods from '../pages/goods';
+import Country from '../pages/country/country';
 
 class App extends Component {
 	render() {
@@ -37,13 +37,17 @@ const AppContent = () => {
 	return (
 		<div className="app container">
 			{/* Условно рендерим Header или HeaderAbout в зависимости от пути */}
-			{location.pathname === '/about' ? <HeaderAbout /> : <Header />}
+			{location.pathname === '/about' || location.pathname === '/country' ? (
+				<HeaderAbout />
+			) : (
+				<Header />
+			)}
 			<main className="app__main">
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/catalog" element={<Catalog />} />
 					<Route path="/about" element={<About />} />
-					<Route path="/goods" element={<Goods />} />
+					<Route path="/country" element={<Country />} />
 				</Routes>
 			</main>
 			<Footer />
