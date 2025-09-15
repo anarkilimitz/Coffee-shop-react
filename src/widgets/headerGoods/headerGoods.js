@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './footer.module.scss';
-import DecoratedTitle from '../../shared/ui/decoratedTitle/decoratedTitle';
+import styles from './headerGooda.module.scss';
 import DecoratedTitleBig from '../../shared/ui/decoratedTitleBig/decoratedTitleBig';
 
-const Footer = () => {
+const HeaderGoods = () => {
 	return (
-		<footer className={styles.footer}>
+		<header className={styles.header_goods}>
 			<nav>
 				<DecoratedTitleBig />
 				<Link to="/">Coffee house</Link>
@@ -14,9 +13,11 @@ const Footer = () => {
 				<Link to="/country">For your pleasure</Link>
 				<Link to="/about">About Us</Link>
 			</nav>
-			<DecoratedTitle />
-		</footer>
+			<div className={styles.title_header_goods}>
+				<h2>For your pleasure</h2>
+			</div>
+		</header>
 	);
 };
 
-export default Footer;
+export default HeaderGoods;

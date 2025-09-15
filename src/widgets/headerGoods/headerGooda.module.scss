@@ -1,0 +1,38 @@
+@import '../../app/styles/variables';
+
+.header_goods {
+    background: url('../../shared/assets/img/for/Main-bg-for.png') center (center/cover) no-repeat;
+    height: 260px;
+    padding: 20px 0 0 0;
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 0px;
+        align-items: center;
+
+        a {
+            color: $light;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $btn-main;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba($btn-shadow, 0.25);
+            }
+        }
+    }
+}
+
+.title_header_goods h2 {
+    margin-top: 60px;
+    color: $light;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}

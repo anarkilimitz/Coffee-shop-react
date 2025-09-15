@@ -1,4 +1,3 @@
-// src/app/app.js
 import React, { Component } from 'react';
 import {
 	BrowserRouter as Router,
@@ -10,12 +9,13 @@ import './styles/global.scss';
 
 // Импорты компонентов
 import Header from '../widgets/header';
-import HeaderAbout from '../widgets/headerAbout/headerAbout'; // Импортируем HeaderAbout
+import HeaderAbout from '../widgets/headerAbout/headerAbout';
+import HeaderGoods from '../widgets/headerGoods/headerGoods';
 import Footer from '../widgets/footer';
 
 // Импорты страниц
 import Home from '../pages/home';
-import Catalog from '../pages/catalog';
+import Goods from '../pages/goods/goods';
 import About from '../pages/about/about';
 import Country from '../pages/country/country';
 
@@ -39,13 +39,15 @@ const AppContent = () => {
 			{/* Условно рендерим Header или HeaderAbout в зависимости от пути */}
 			{location.pathname === '/about' || location.pathname === '/country' ? (
 				<HeaderAbout />
+			) : location.pathname === '/goods' ? (
+				<HeaderGoods />
 			) : (
 				<Header />
 			)}
 			<main className="app__main">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/catalog" element={<Catalog />} />
+					<Route path="/goods" element={<Goods />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/country" element={<Country />} />
 				</Routes>
