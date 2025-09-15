@@ -10,7 +10,7 @@ const HeaderAbout = () => {
 				<DecoratedTitleBig />
 				<Link to="/">Coffee house</Link>
 				<Link to="/catalog">Our coffee</Link>
-				<Link to="/goods">For your pleasure</Link>
+				<Link to="/country">For your pleasure</Link>
 				<Link to="/about">About Us</Link>
 			</nav>
 			<div className={styles.title_header_about}>
