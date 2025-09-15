@@ -1,0 +1,10 @@
+@use '../../../app/styles/mixins.scss';
+@import '../../../app/styles/variables.scss';
+
+.btn {
+    @include mixins.button;
+    margin: 0 auto;
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+}

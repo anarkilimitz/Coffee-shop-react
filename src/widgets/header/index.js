@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './header.module.scss';
 import DecoratedTitleWhite from '../../shared/ui/decoratedTitleWhite/decoratedTitleWhite';
 import DecoratedTitleBig from '../../shared/ui/decoratedTitleBig/decoratedTitleBig';
+import Btn from '../../shared/ui/button/btn';
 
 const Header = () => {
 	return (
@@ -22,6 +23,7 @@ const Header = () => {
 					<h3>Want to try our beans?</h3>
 				</div>
 			</div>
+			<Btn />
 		</header>
 	);
 };

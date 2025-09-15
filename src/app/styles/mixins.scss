@@ -1,25 +1,20 @@
-@use './variables.scss';
-
-@mixin title {
-    color: v.$dark;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
-    text-align: center;
-}
+@import './variables.scss';
 
 @mixin button {
     display: block;
     padding: 0 10px;
     border-radius: 2px;
-    border: 1px solid v.$dark;
+    border: 1px solid $light;
     text-align: center;
-    color: v.$dark;
+    color: $light;
     background-color: transparent; // прозрачный
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
     cursor: pointer;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 25px rgba($btn-shadow, 0.25);
+    }
 }

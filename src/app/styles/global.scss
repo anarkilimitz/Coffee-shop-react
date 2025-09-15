@@ -44,3 +44,13 @@ code {
         padding: 0 10px;
     }
 }
+
+::selection {
+    background-color: $btn-main;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background-color: $btn-main;
+    color: #ffffff;
+}

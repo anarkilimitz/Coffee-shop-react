@@ -3,10 +3,12 @@ import React from 'react';
 import styles from './about.module.scss';
 import ourBeansImage from '../../shared/assets/img/our/our.png';
 import DecoratedTitle from '../../shared/ui/decoratedTitle/decoratedTitle';
+import Filter from '../../widgets/filter/filter';
+import CatalogAabout from '../../widgets/catalog-about/catalog-about';
 
 const About = () => {
 	return (
-		<div className={styles.container}>
+		<section className={styles.container}>
 			<div className={styles.about}>
 				<div className={styles.about__wrapper}>
 					<img
@@ -36,7 +38,9 @@ const About = () => {
 				</div>
 			</div>
 			<span className={styles.line}></span>
-		</div>
+			<Filter />
+			<CatalogAabout />
+		</section>
 	);
 };
 
