@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Логика фильтра
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Компонент `Filter`
 
-## Available Scripts
+### Пропсы
+- **`onSearch`**  
+  Функция, вызываемая при вводе текста в поле поиска. Передает введенный текст в компонент `CatalogAbout` для обновления состояния `searchTerm`.
 
-In the project directory, you can run:
+- **`onCountryFilter`**  
+  Функция, вызываемая при клике на кнопку страны. Передает выбранную страну в компонF `CatalogAbout` для обновления состояния `selectedCountries`.
 
-### `npm start`
+- **`selectedCountries`**  
+  Массив выбранных стран. Используется для добавления класса `active` к активным кнопкам (например, тёмный фон для выбранных стран).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Функциональность
+- **Поле ввода**  
+  При вводе текста вызывается функция `handleInputChange`, которая передает текст в `onSearch`, обновляя состояние `searchTerm` в `CatalogAbout`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Кнопки стран**  
+  При клике на кнопку (например, "Brazil") вызывается функция `handleButtonClick`, которая передает выбранную страну в `onCountryFilter`, обновляя состояние `selectedCountries` в `CatalogAbout`.
 
-### `npm test`
+## Компонент `CatalogAbout`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Состояние
+- **`searchTerm`**  
+  Хранит текст, введенный пользователем в поле поиска.
 
-### `npm run build`
+- **`selectedCountries`**  
+  Хранит массив выбранных стран (например, `['Brazil', 'Kenya']`).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Фильтрация данных
+- **`mockData`**  
+  Исходный массив карточек кофе.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **`filteredData`**  
+  Отфильтрованный массив, создаваемый на основе двух условий:
+  - **matchesSearch**: Проверяет, содержит ли заголовок карточки (`title`) введенный текст (`searchTerm`), игнорируя регистр.
+  - **matchesCountry**: Проверяет, соответствует ли страна карточки (`descr`) одной из выбранных стран в `selectedCountries`. Если `selectedCountries` пустой, показываются все карточки.
+  
+  Карточка включается в `filteredData`, только если она соответствует обоим условиям (`matchesSearch && matchesCountry`).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Фиксированная структура сетки
+- **`displayData`**  
+  Создает массив из 6 элементов, добавляя пустые заглушки (`null`), если `filteredData` содержит меньше 6 карточек. Это гарантирует, что сетка всегда имеет структуру **3×2** (3 колонки × 2 строки), и карточки не растягиваются, даже если их меньше.
 
-### `npm run eject`
+### Рендеринг
+- Реальные карточки рендерятся с помощью компонента `MenuCard`.
+- Пустые ячейки рендерятся как `<div>` с классом `menu__item_placeholder`, который занимает место в сетке, но не отображает содержимое.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Взаимодействие компонентов
+- Компонент `Filter` передает пользовательский ввод (текст и страны) в `CatalogAbout` через пропсы `onSearch` и `onCountryFilter`.
+- `CatalogAbout` обновляет состояния `searchTerm` и `selectedCountries`, что вызывает пересчет `filteredData`.
+- `filteredData` определяет, какие карточки отображаются, а `displayData` обеспечивает фиксированную структуру сетки.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Сохранение размера блока
+- Пустые заглушки (`menu__item_placeholder`) в `displayData` гарантируют, что сетка всегда содержит 6 ячеек, предотвращая растяжение или смещение оставшихся карточек.
+- Стили в `CatalogAbout.module.scss` задают для `.menu__item_placeholder` ту же ширину (**220px**) и минимальную высоту (**260px**), что и для `.menu__item`, чтобы заглушки корректно занимали место в сетке.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Стилизация кнопок
+- Активные кнопки (например, выбранная "Brazil") имеют класс `styles.active`, который меняет их фон на тёмный и текст на белый.
