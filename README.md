@@ -1,60 +1,60 @@
 # Логика фильтра
 
-## Компонент `Filter`
+## Компонент <span style="color: #0000FF">Filter</span>
 
 ### Пропсы
-- **`onSearch`**  
-  Функция, вызываемая при вводе текста в поле поиска. Передает введенный текст в компонент `CatalogAbout` для обновления состояния `searchTerm`.
+- <span style="color: #0000FF">**onSearch**</span>  
+  Функция, вызываемая при вводе текста в поле поиска. Передает введенный текст в компонент <span style="color: #0000FF">CatalogAbout</span> для обновления состояния <span style="color: #0000FF">searchTerm</span>.
 
-- **`onCountryFilter`**  
-  Функция, вызываемая при клике на кнопку страны. Передает выбранную страну в компонF `CatalogAbout` для обновления состояния `selectedCountries`.
+- <span style="color: #0000FF">**onCountryFilter**</span>  
+  Функция, вызываемая при клике на кнопку страны. Передает выбранную страну в компонент <span style="color: #0000FF">CatalogAbout</span> для обновления состояния <span style="color: #0000FF">selectedCountries</span>.
 
-- **`selectedCountries`**  
-  Массив выбранных стран. Используется для добавления класса `active` к активным кнопкам (например, тёмный фон для выбранных стран).
+- <span style="color: #0000FF">**selectedCountries**</span>  
+  Массив выбранных стран. Используется для добавления класса <span style="color: #FF0000">active</span> к активным кнопкам (например, тёмный фон для выбранных стран).
 
 ### Функциональность
 - **Поле ввода**  
-  При вводе текста вызывается функция `handleInputChange`, которая передает текст в `onSearch`, обновляя состояние `searchTerm` в `CatalogAbout`.
+  При вводе текста вызывается функция <span style="color: #0000FF">handleInputChange</span>, которая передает текст в <span style="color: #0000FF">onSearch</span>, обновляя состояние <span style="color: #0000FF">searchTerm</span> в <span style="color: #0000FF">CatalogAbout</span>.
 
 - **Кнопки стран**  
-  При клике на кнопку (например, "Brazil") вызывается функция `handleButtonClick`, которая передает выбранную страну в `onCountryFilter`, обновляя состояние `selectedCountries` в `CatalogAbout`.
+  При клике на кнопку (например, "Brazil") вызывается функция <span style="color: #0000FF">handleButtonClick</span>, которая передает страну в <span style="color: #0000FF">onCountryFilter</span>, обновляя состояние <span style="color: #0000FF">selectedCountries</span> в <span style="color: #0000FF">CatalogAbout</span>.
 
-## Компонент `CatalogAbout`
+## Компонент <span style="color: #0000FF">CatalogAbout</span>
 
 ### Состояние
-- **`searchTerm`**  
+- <span style="color: #0000FF">**searchTerm**</span>  
   Хранит текст, введенный пользователем в поле поиска.
 
-- **`selectedCountries`**  
-  Хранит массив выбранных стран (например, `['Brazil', 'Kenya']`).
+- <span style="color: #0000FF">**selectedCountries**</span>  
+  Хранит массив выбранных стран (например, <span style="color: #FF0000">['Brazil', 'Kenya']</span>).
 
 ### Фильтрация данных
-- **`mockData`**  
+- <span style="color: #0000FF">**mockData**</span>  
   Исходный массив карточек кофе.
 
-- **`filteredData`**  
+- <span style="color: #0000FF">**filteredData**</span>  
   Отфильтрованный массив, создаваемый на основе двух условий:
-  - **matchesSearch**: Проверяет, содержит ли заголовок карточки (`title`) введенный текст (`searchTerm`), игнорируя регистр.
-  - **matchesCountry**: Проверяет, соответствует ли страна карточки (`descr`) одной из выбранных стран в `selectedCountries`. Если `selectedCountries` пустой, показываются все карточки.
+  - <span style="color: #0000FF">matchesSearch</span>: Проверяет, содержит ли заголовок карточки (<span style="color: #0000FF">title</span>) введенный текст (<span style="color: #0000FF">searchTerm</span>), игнорируя регистр.
+  - <span style="color: #0000FF">matchesCountry</span>: Проверяет, соответствует ли страна карточки (<span style="color: #0000FF">descr</span>) одной из выбранных стран в <span style="color: #0000FF">selectedCountries</span>. Если <span style="color: #0000FF">selectedCountries</span> пустой, показываются все карточки.
   
-  Карточка включается в `filteredData`, только если она соответствует обоим условиям (`matchesSearch && matchesCountry`).
+  Карточка включается в <span style="color: #0000FF">filteredData</span>, только если она соответствует обоим условиям (<span style="color: #FF0000">matchesSearch && matchesCountry</span>).
 
 ### Фиксированная структура сетки
-- **`displayData`**  
-  Создает массив из 6 элементов, добавляя пустые заглушки (`null`), если `filteredData` содержит меньше 6 карточек. Это гарантирует, что сетка всегда имеет структуру **3×2** (3 колонки × 2 строки), и карточки не растягиваются, даже если их меньше.
+- <span style="color: #0000FF">**displayData**</span>  
+  Создает массив из <span style="color: #FF0000">6 элементов</span>, добавляя пустые заглушки (<span style="color: #0000FF">null</span>), если <span style="color: #0000FF">filteredData</span> содержит меньше 6 карточек. Это гарантирует, что сетка всегда имеет структуру <span style="color: #FF0000">3×2</span> (3 колонки × 2 строки), и карточки не растягиваются, даже если их меньше.
 
 ### Рендеринг
-- Реальные карточки рендерятся с помощью компонента `MenuCard`.
-- Пустые ячейки рендерятся как `<div>` с классом `menu__item_placeholder`, который занимает место в сетке, но не отображает содержимое.
+- Реальные карточки рендерятся с помощью компонента <span style="color: #0000FF">MenuCard</span>.
+- Пустые ячейки рендерятся как <span style="color: #0000FF">&lt;div&gt;</span> с классом <span style="color: #FF0000">menu__item_placeholder</span>, который занимает место в сетке, но не отображает содержимое.
 
 ## Взаимодействие компонентов
-- Компонент `Filter` передает пользовательский ввод (текст и страны) в `CatalogAbout` через пропсы `onSearch` и `onCountryFilter`.
-- `CatalogAbout` обновляет состояния `searchTerm` и `selectedCountries`, что вызывает пересчет `filteredData`.
-- `filteredData` определяет, какие карточки отображаются, а `displayData` обеспечивает фиксированную структуру сетки.
+- Компонент <span style="color: #0000FF">Filter</span> передает пользовательский ввод (текст и страны) в <span style="color: #0000FF">CatalogAbout</span> через пропсы <span style="color: #0000FF">onSearch</span> и <span style="color: #0000FF">onCountryFilter</span>.
+- <span style="color: #0000FF">CatalogAbout</span> обновляет состояния <span style="color: #0000FF">searchTerm</span> и <span style="color: #0000FF">selectedCountries</span>, что вызывает пересчет <span style="color: #0000FF">filteredData</span>.
+- <span style="color: #0000FF">filteredData</span> определяет, какие карточки отображаются, а <span style="color: #0000FF">displayData</span> обеспечивает фиксированную структуру сетки.
 
 ## Сохранение размера блока
-- Пустые заглушки (`menu__item_placeholder`) в `displayData` гарантируют, что сетка всегда содержит 6 ячеек, предотвращая растяжение или смещение оставшихся карточек.
-- Стили в `CatalogAbout.module.scss` задают для `.menu__item_placeholder` ту же ширину (**220px**) и минимальную высоту (**260px**), что и для `.menu__item`, чтобы заглушки корректно занимали место в сетке.
+- Пустые заглушки (<span style="color: #FF0000">menu__item_placeholder</span>) в <span style="color: #0000FF">displayData</span> гарантируют, что сетка всегда содержит <span style="color: #FF0000">6 ячеек</span>, предотвращая растяжение или смещение оставшихся карточек.
+- Стили в <span style="color: #0000FF">CatalogAbout.module.scss</span> задают для <span style="color: #FF0000">.menu__item_placeholder</span> ту же ширину (<span style="color: #FF0000">220px</span>) и минимальную высоту (<span style="color: #FF0000">260px</span>), что и для <span style="color: #FF0000">.menu__item</span>, чтобы заглушки корректно занимали место в сетке.
 
 ## Стилизация кнопок
-- Активные кнопки (например, выбранная "Brazil") имеют класс `styles.active`, который меняет их фон на тёмный и текст на белый.
+- Активные кнопки (например, выбранная <span style="color: #FF0000">"Brazil"</span>) имеют класс <span style="color: #FF0000">styles.active</span>, который меняет их фон на тёмный и текст на белый.
