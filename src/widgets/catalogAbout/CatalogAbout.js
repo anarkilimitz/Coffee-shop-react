@@ -1,52 +1,77 @@
-import React from 'react';
-import styles from './catalog-about.module.scss';
+import React, { useState } from 'react';
+import styles from './CatalogAbout.module.scss';
 import Aromis from '../../shared/assets/img/main-cards/aromis.png';
+import Filter from '../filter/filter';
 
-const Catalog = () => {
+const CatalogAbout = () => {
+	const [searchTerm, setSearchTerm] = useState('');
+	const [selectedCountries, setSelectedCountries] = useState([]);
+
+	const handleSearch = (term) => {
+		setSearchTerm(term);
+	};
+
+	const handleCountryFilter = (country) => {
+		setSelectedCountries((prev) =>
+			prev.includes(country)
+				? prev.filter((c) => c !== country)
+				: [...prev, country]
+		);
+	};
+
 	const mockData = [
 		{
 			img: Aromis,
 			altimg: 'Brazil',
-			title: 'AROMISTICO Coffee 1 kg',
+			title: 'AROMIS Coffee 1 kg',
 			descr: 'Brazil',
 			price: 7.5,
 		},
 		{
 			img: Aromis,
 			altimg: 'Kenya',
-			title: 'AROMISTICO Coffee 1 kg',
+			title: 'Dark Dawn Roast 1 kg',
 			descr: 'Kenya',
 			price: 8.3,
 		},
 		{
 			img: Aromis,
 			altimg: 'Columbia',
-			title: 'AROMISTICO Coffee 1 kg',
+			title: 'Espresso Essence 1 kg',
 			descr: 'Columbia',
 			price: 9,
 		},
 		{
 			img: Aromis,
 			altimg: 'Brazil',
-			title: 'AROMISTICO Coffee 1 kg',
+			title: 'Cappuccino Craft 1 kg',
 			descr: 'Brazil',
 			price: 7.5,
 		},
 		{
 			img: Aromis,
 			altimg: 'Brazil',
-			title: 'AROMISTICO Coffee 1 kg',
+			title: 'Barista Blend 1 kg',
 			descr: 'Brazil',
 			price: 7.5,
 		},
 		{
 			img: Aromis,
 			altimg: 'Brazil',
-			title: 'AROMISTICO Coffee 1 kg',
+			title: 'Fireside Brew 1 kg',
 			descr: 'Brazil',
 			price: 7.5,
 		},
 	];
+
+	const filteredData = mockData.filter((item) => {
+		const matchesSearch = item.title
+			.toLowerCase()
+			.includes(searchTerm.toLowerCase());
+		const matchesCountry =
+			selectedCountries.length === 0 || selectedCountries.includes(item.descr);
+		return matchesSearch && matchesCountry;
+	});
 
 	const MenuCard = ({ src, alt, title, descr, price }) => {
 		const transfer = 92;
@@ -70,9 +95,14 @@ const Catalog = () => {
 
 	return (
 		<div className={styles.menu}>
+			<Filter
+				onSearch={handleSearch}
+				onCountryFilter={handleCountryFilter}
+				selectedCountries={selectedCountries}
+			/>
 			<div className={styles.menu__field}>
 				<div className={styles.container}>
-					{mockData.map(({ img, altimg, title, descr, price }, index) => (
+					{filteredData.map(({ img, altimg, title, descr, price }, index) => (
 						<MenuCard
 							key={index}
 							src={img}
@@ -88,4 +118,4 @@ const Catalog = () => {
 	);
 };
 
-export default Catalog;
+export default CatalogAbout;

@@ -3,8 +3,7 @@ import React from 'react';
 import styles from './about.module.scss';
 import ourBeansImage from '../../shared/assets/img/our/our.png';
 import DecoratedTitle from '../../shared/ui/decoratedTitle/decoratedTitle';
-import Filter from '../../widgets/filter/filter';
-import CatalogAabout from '../../widgets/catalog-about/catalog-about';
+import CatalogAbout from '../../widgets/catalogAbout/CatalogAbout';
 
 const About = () => {
 	return (
@@ -38,8 +37,7 @@ const About = () => {
 				</div>
 			</div>
 			<span className={styles.line}></span>
-			<Filter />
-			<CatalogAabout />
+			<CatalogAbout />
 		</section>
 	);
 };

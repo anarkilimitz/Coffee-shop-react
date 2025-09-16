@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './goods.module.scss';
 import CupCoffee from '../../shared/assets/img/for/for-about.png';
 import DecoratedTitle from '../../shared/ui/decoratedTitle/decoratedTitle';
-import CatalogAabout from '../../widgets/catalog-about/catalog-about';
+import CatalogAbout from '../../widgets/catalogAbout/CatalogAbout';
 
 const Goods = () => {
 	return (
@@ -36,7 +36,7 @@ const Goods = () => {
 				</div>
 			</div>
 			<span className={styles.line}></span>
-			<CatalogAabout />
+			<CatalogAbout />
 		</section>
 	);
 };
