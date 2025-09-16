@@ -8,13 +8,13 @@ import {
 import './styles/global.scss';
 
 // Импорты компонентов
-import Header from '../widgets/header';
+import Header from '../widgets/header/header';
 import HeaderAbout from '../widgets/headerAbout/headerAbout';
 import HeaderGoods from '../widgets/headerGoods/headerGoods';
-import Footer from '../widgets/footer';
+import Footer from '../widgets/footer/footer';
 
 // Импорты страниц
-import Home from '../pages/home';
+import Home from '../pages/home/home';
 import Goods from '../pages/goods/goods';
 import About from '../pages/about/about';
 import Country from '../pages/country/country';
@@ -47,8 +47,8 @@ const AppContent = () => {
 			<main className="app__main">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/goods" element={<Goods />} />
 					<Route path="/about" element={<About />} />
+					<Route path="/goods" element={<Goods />} />
 					<Route path="/country" element={<Country />} />
 				</Routes>
 			</main>

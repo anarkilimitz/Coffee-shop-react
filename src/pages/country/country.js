@@ -11,7 +11,7 @@ const Country = () => {
 					<img
 						className={styles.country__photo}
 						src={ourAbout}
-						alt="About our beans"
+						alt="About it"
 					/>
 					<div className={styles.country__wrapper_text}>
 						<h3 className={styles.country__title}>About it</h3>
@@ -28,7 +28,7 @@ const Country = () => {
 								commodo consequat.
 							</p>
 							<p>
-								Price: <span>16.99$</span>
+								Price: <span>690 руб</span>
 							</p>
 						</div>
 					</div>

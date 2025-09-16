@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './promo.module.scss';
-import Catalog from '../../pages/catalog';
+import Catalog from '../catalog/catalog';
 
 const Promo = () => {
 	return (

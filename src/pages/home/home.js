@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './home.module.scss';
 import DecoratedTitle from '../../shared/ui/decoratedTitle/decoratedTitle';
-import Promo from '../../widgets/promo';
+import Promo from '../../widgets/promo/promo';
 
 const Home = () => {
 	return (

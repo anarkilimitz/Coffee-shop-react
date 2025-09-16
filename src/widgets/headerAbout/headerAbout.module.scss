@@ -21,7 +21,7 @@
             transition: all 0.3s ease;
 
             &:hover {
-                background-color: $btn-main;
+                // background-color: $btn-main;
                 transform: translateY(-3px);
                 box-shadow: 0 8px 25px rgba($btn-shadow, 0.25);
             }
