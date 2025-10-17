@@ -29,3 +29,13 @@
         }
     }
 }
+
+@media screen and (max-width: 790px) {
+    .footer {
+        height: 330px;
+
+        nav {
+            flex-direction: column;
+        }
+    }
+}

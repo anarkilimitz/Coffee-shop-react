@@ -97,7 +97,6 @@ const CatalogAbout = () => {
 
 	// Компонент карточки для отображения одной позиции кофе
 	const MenuCard = ({ src, alt, title, descr, price }) => {
-		// Конвертируем цену в рубли (цена в USD умножается на курс)
 		const transfer = 92;
 		const priceInUSD = price * transfer;
 

@@ -21,3 +21,20 @@ h2 {
     padding: 80px 0px 90px 0;
     text-align: center;
 }
+
+@media screen and (max-width: 1020px) {
+    .container {
+        height: 1140px;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .container {
+        height: 1520px;
+        margin-bottom: 60px;
+    }
+
+    .title_promo {
+        padding: 50px 0px 50px 0;
+    }
+}

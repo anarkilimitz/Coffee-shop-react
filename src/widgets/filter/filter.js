@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './filter.module.scss';
 
-// Компонент Filter предоставляет интерфейс для фильтрации карточек по тексту и странам
 // Принимает пропсы:
 // - onSearch: функция для обработки текста поиска
 // - onCountryFilter: функция для обработки выбора страны

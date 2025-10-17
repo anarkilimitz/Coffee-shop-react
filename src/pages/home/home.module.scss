@@ -35,3 +35,13 @@ p {
     margin: 41px 0px 41px 0;
     text-align: center;
 }
+
+@media screen and (max-width: 790px) {
+    .container {
+        margin: 60px auto 60px auto;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}

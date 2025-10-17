@@ -34,7 +34,6 @@ h3 {
     color: $light;
     font-size: 24px;
     font-weight: 400;
-    // margin: 100px 0px 41px 0;
     text-align: center;
 }
 
@@ -48,4 +47,32 @@ h3 {
 
 .title_mg {
     margin-top: 80px;
+}
+
+@media screen and (max-width: 790px) {
+    .header {
+        padding: 0;
+
+        nav {
+            flex-direction: column;
+        }
+    }
+
+    .title_header h2 {
+        font-size: 32px;
+        font-weight: 400;
+        margin: 60px 0px 30px 0;
+    }
+
+    .title_mg {
+        margin-top: 40px;
+    }
+
+        h2,
+        h3 {
+            color: $light;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+        }
 }
