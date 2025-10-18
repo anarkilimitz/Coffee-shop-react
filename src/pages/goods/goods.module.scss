@@ -52,3 +52,19 @@
     background-color: $dark;
     display: block;
 }
+
+@media screen and (max-width: 790px) {
+    .goods {
+        width: 100%;
+
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
+    }
+
+    .line {
+        margin: 50px auto;
+    }
+}

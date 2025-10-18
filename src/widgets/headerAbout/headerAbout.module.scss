@@ -21,7 +21,6 @@
             transition: all 0.3s ease;
 
             &:hover {
-                // background-color: $btn-main;
                 transform: translateY(-3px);
                 box-shadow: 0 8px 25px rgba($btn-shadow, 0.25);
             }
@@ -35,4 +34,19 @@
     font-size: 40px;
     font-weight: 400;
     text-align: center;
+}
+
+@media screen and (max-width: 790px) {
+    .header_about {
+        padding: 0;
+        height: 400px;
+
+        nav {
+            flex-direction: column;
+        }
+    }
+
+    .title_header_about h2 {
+        font-size: 32px;
+    }
 }

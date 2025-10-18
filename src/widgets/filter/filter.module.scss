@@ -92,3 +92,11 @@
         }
     }
 }
+
+@media screen and (max-width: 992px) {
+    .filter {
+        &__wrapper_look {
+            flex-direction: column;
+        }
+    }
+}
